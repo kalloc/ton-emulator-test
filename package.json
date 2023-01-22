@@ -1,0 +1,38 @@
+{
+    "name": "learn-ton-contracts",
+    "author": "Nikita Kuznetsov <n@8gen.team>",
+    "version": "1.0.0",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "ts-mocha './test/*.test.ts'"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@aws-crypto/sha256-js": "^3.0.0",
+        "@ton-community/func-js": "^0.4.0",
+        "@ton-community/sandbox": "^0.2.0",
+        "@ton-community/test-utils": "^0.0.1",
+        "bn.js": "^5.2.1",
+        "chai": "^4.3.7",
+        "chai-bn": "^0.3.1",
+        "ton": "^13.3.0",
+        "ton-core": "^0.45.0",
+        "ton-crypto": "^3.2.0",
+        "ton-emulator": "^1.6.0",
+        "typescript": "^4.9.4"
+    },
+    "devDependencies": {
+        "@types/bn.js": "^5.1.1",
+        "@types/chai": "^4.3.4",
+        "@types/expect": "^24.3.0",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^18.11.18",
+        "mocha": "^10.2.0",
+        "ts-mocha": "^10.0.0"
+    }
+}
