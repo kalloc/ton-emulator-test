@@ -5,18 +5,18 @@
 ;; Mutable
 
 () recv_internal(slice body) impure {
-    ~dump(body);
+    ;; ~dump(body);
     throw_if(35, body.slice_bits() < 32);
     int n = body~load_uint(32);
-    ~dump(n);
+    ;; ~dump(n);
 
     slice ds = get_data().begin_parse();
     int total = ds~load_uint(64);
 
     total += n;
 
-    throw_if(37, total > 12);
-    ~dump(total);
+    ;; throw_if(37, total > 12);
+    ;; ~dump(total);
     set_data(begin_cell().store_uint(total, 64).end_cell());
 }
 
