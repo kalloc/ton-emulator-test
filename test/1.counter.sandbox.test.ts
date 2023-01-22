@@ -13,7 +13,7 @@ import {
     ContractProvider,
     Sender,
 } from "ton";
-import { Blockchain } from "@ton-community/sandbox"
+import {Blockchain} from "@ton-community/sandbox"
 import {ContractExecutor, ContractSystem, Treasure} from "ton-emulator";
 import {
     CompilationTargets,
@@ -36,13 +36,13 @@ import "@ton-community/test-utils" // register matchers
 export class CounterContract implements Contract {
     readonly code: Cell;
     readonly address: Address;
-    readonly init: { code: Cell; data: Cell; };
+    readonly init: {code: Cell; data: Cell;};
 
     constructor(workchain: number, contractCode: ContractsData) {
         const data = beginCell()
             .storeUint(0, 64)
             .endCell()
-        this.init = { code: contractCode.code, data }
+        this.init = {code: contractCode.code, data}
         this.code = contractCode.code;
         this.address = contractAddress(workchain, this.init)
     }
@@ -70,7 +70,7 @@ export class CounterContract implements Contract {
     }
 
     async getData(provider: ContractProvider) {
-        const { stack } = await provider.get('get_total', [])
+        const {stack} = await provider.get('get_total', [])
         return {
             total: stack.readNumber(),
         }
